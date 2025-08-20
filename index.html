@@ -1,11 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta name="description" content="Nirvana Tech Fest: ">
+    <meta name="keywords" content="web development, hackathon, landing page, Tailwind CSS, responsive design">
+    <title>Nirvana Tech Fest | TeekGeeks</title>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Tailwind config: fonts, colors, container, etc.
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    container: { center: true, padding: '1rem' },
+                    colors: {
+                        brand: {
+                            50: '#ecfeff',
+                            100: '#cffafe',
+                            200: '#a5f3fc',
+                            300: '#67e8f9',
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                            700: '#0e7490',
+                            800: '#155e75',
+                            900: '#164e63'
+                        }
+                    },
+                    boxShadow: {
+                        soft: '0 10px 30px rgba(0,0,0,0.08)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        :root {
+            --ease: cubic-bezier(.2, .8, .2, 1);
+        }
+
+        html {
+            font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+        }
+
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(18px) scale(.98);
+            transition: opacity .7s var(--ease), transform .7s var(--ease);
+        }
+
+        .reveal-on-scroll.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
 </head>
-<body>
-    
+
+<body class="font-sans antialiased">
+    <header class="sticky top-0 z-50 backdrop-blur bg-white/90 border-b border-slate-200/60">
+        <div class="container">
+            <div class="flex items-center justify-between py-3">
+                <a href="/" class="flex items-center gap-2 group">
+                    <span
+                        class="inline-flex h-9 w-9 rounded-2xl bg-purple-800 items-center justify-center text-white shadow-soft ring-1 ring-white/20">
+                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+                            viewBox="0,0,256,256">
+                            <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                                style="mix-blend-mode: normal">
+                                <g transform="scale(5.33333,5.33333)">
+                                    <path
+                                        d="M23.95117,4c-0.31984,0.01092 -0.62781,0.12384 -0.87891,0.32227l-14.21289,11.19727c-1.8039,1.42163 -2.85937,3.59398 -2.85937,5.89063v19.08984c0,1.36359 1.13641,2.5 2.5,2.5h10c1.36359,0 2.5,-1.13641 2.5,-2.5v-10c0,-0.29504 0.20496,-0.5 0.5,-0.5h5c0.29504,0 0.5,0.20496 0.5,0.5v10c0,1.36359 1.13641,2.5 2.5,2.5h10c1.36359,0 2.5,-1.13641 2.5,-2.5v-19.08984c0,-2.29665 -1.05548,-4.46899 -2.85937,-5.89062l-14.21289,-11.19727c-0.27738,-0.21912 -0.62324,-0.33326 -0.97656,-0.32227zM24,7.41016l13.28516,10.4668c1.0841,0.85437 1.71484,2.15385 1.71484,3.5332v18.58984h-9v-9.5c0,-1.91495 -1.58505,-3.5 -3.5,-3.5h-5c-1.91495,0 -3.5,1.58505 -3.5,3.5v9.5h-9v-18.58984c0,-1.37935 0.63074,-2.67883 1.71484,-3.5332z">
+                                    </path>
+                                </g>
+                            </g>
+                        </svg>
+                    </span>
+                    <span class="text-lg font-extrabold tracking-tight font-anta">Nirvana Tech Fest</span>
+                </a>
+                <nav class="hidden md:flex items-center gap-6 font-semibold">
+                    <a href="/index.html" class="hover:text-sky-600-400">Home</a>
+                    <a href="/events.html" class="hover:text-sky-600-400">Events</a>
+                    <a href="/about.html" class="hover:text-sky-600-400">About</a>
+                    <a href="/contact.html" class="hover:text-sky-600-400">Contact</a>
+                </nav>
+
+                <div class="flex items-center gap-2">
+
+                    <a href="#upcomingevents"
+                        class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-800 hover:bg-purpose-700 text-white text-sm font-semibold shadow-soft transition">
+                        Get Started
+                    </a>
+                    <button id="menuBtn" class="md:hidden p-2 rounded-xl ring-1 ring-transparent bg-none transition"
+                        aria-label="Open menu">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobileMenu" class="md:hidden hidden pb-4">
+                <nav class="grid gap-2">
+                    <a href="/" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">Home</a>
+                    <a href="/event.html" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">Events</a>
+                    <a href="/about.html" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">About</a>
+                    <a href="/contact.html" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home"
+        class="min-h-screen flex items-center justify-center text-white relative overflow-hidden pt-20 bg-gradient-to-r from-blue-900 to-purple-800">
+        <div class="container mx-auto px-4 text-center z-10">
+            <h1 class="text-3xl lg:text-6xl sm:text-4xl font-bold md:mb-6 mb-2 animate-slide-up">Get Your Place in
+                Nirvana Tech Fest</h1>
+            <p class="text-md 2xl:text-xl md:mb-8 mb-4 animate-slide-up delay-200 max-w-3xl mx-auto">Take part in
+                upcoming event
+                show your talent and skill, win exciting prices.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#upcomingevents"
+                    class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold transition-all">Get
+                    Started</a>
+            </div>
+        </div>
+        <div class="absolute inset-0 z-0 opacity-50">
+            <div class="absolute top-10 left-10 w-16 sm:w-32 h-16 sm:h-32 bg-white rounded-full animate-pulse-slow">
+            </div>
+            <div
+                class="absolute bottom-10 right-10 w-24 sm:w-48 h-24 sm:h-48 bg-white rounded-full animate-pulse-slow delay-1000">
+            </div>
+            <div
+                class="absolute top-1/2 left-1/2 w-32 sm:w-64 h-32 sm:h-64 bg-white rounded-full animate-spin-slow opacity-20">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="#upcomingevents">
+        <div class="container">
+            <div class="max-w-2xl mx-auto text-center mb-12 reveal-on-scroll">
+                <h2 class="text-3xl sm:text-4xl font-extrabold">Upcoming Events</h2>
+                <a href="/events.html" class="mt-4 text-slate-800">click for more events.</a>
+            </div>
+
+            <div class="container mx-auto px-4">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div
+                        class="bg-white rounded-lg shadow-lg overflow-hidden animate-slide-up transition reveal-on-scroll">
+                        <img src="/images/banner1.png" alt="banner 1"
+                            class="rounded-sm shadow-soft border border-slate-200" />
+                        <div class="p-6 text-center">
+                            <a href="/events/event1.html" class="text-2xl font-bold mb-2">Webathon 3.0</a>
+                            <p class="text-neutral mb-4">2025-08-20</p>
+                            <p class="text-sm">Web-a-thon 3.0 The Web Design Competiton</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-lg shadow-lg overflow-hidden animate-slide-up transition reveal-on-scroll">
+                        <img src="/images/banner2.png" alt="banner 1"
+                            class="rounded-sm shadow-soft border border-slate-200" />
+                        <div class="p-6 text-center">
+                            <a href="/events/event1.html" class="text-2xl font-bold mb-2">Figma Fiesta</a>
+                            <p class="text-neutral mb-4">2025-07-20</p>
+                            <p class="text-sm">The Digital Design Challenge 2025</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-lg shadow-lg overflow-hidden animate-slide-up transition reveal-on-scroll">
+                        <img src="/images/banner2.webp" alt="banner 1"
+                            class="rounded-sm shadow-soft border border-slate-200" />
+                        <div class="p-6 text-center">
+                            <a href="/events/event1.html" class="text-2xl font-bold mb-2">24X7 Hackathon</a>
+                            <p class="text-neutral mb-4">2025-06-17</p>
+                            <p class="text-sm">SOC GEHU Haldwani presents a new 24 Hour Hackathon</p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-lg shadow-lg overflow-hidden animate-slide-up transition reveal-on-scroll">
+                        <img src="/images/banner3.png" alt="banner 1"
+                            class="rounded-sm shadow-soft border border-slate-200" />
+                        <div class="p-6 text-center">
+                            <a href="/events/event1.html" class="text-2xl font-bold mb-2">Gaming Events</a>
+                            <p class="text-neutral mb-4">2025-04-31</p>
+                            <p class="text-sm">BIG BASH SHOWDOWN </p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-lg shadow-lg overflow-hidden animate-slide-up transition reveal-on-scroll">
+                        <img src="/images/banner5.jpg" alt="banner 1"
+                            class="rounded-sm shadow-soft border border-slate-200" />
+                        <div class="p-6 text-center">
+                            <a href="/events/event1.html" class="text-2xl font-bold mb-2">Engineer X</a>
+                            <p class="text-neutral mb-4">2025-01-06</p>
+                            <p class="text-sm">Take part in Engineer X</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="border-t border-slate-300">
+        <div class="container pt-10 pb-2">
+            <div class="grid md:grid-cols-4 gap-6">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span
+                            class="inline-flex h-8 w-8 rounded-xl bg-purple-800 items-center justify-center text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20"
+                                viewBox="0,0,256,256">
+                                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1"
+                                    stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10"
+                                    stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none"
+                                    font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+                                    <g transform="scale(5.33333,5.33333)">
+                                        <path
+                                            d="M23.95117,4c-0.31984,0.01092 -0.62781,0.12384 -0.87891,0.32227l-14.21289,11.19727c-1.8039,1.42163 -2.85937,3.59398 -2.85937,5.89063v19.08984c0,1.36359 1.13641,2.5 2.5,2.5h10c1.36359,0 2.5,-1.13641 2.5,-2.5v-10c0,-0.29504 0.20496,-0.5 0.5,-0.5h5c0.29504,0 0.5,0.20496 0.5,0.5v10c0,1.36359 1.13641,2.5 2.5,2.5h10c1.36359,0 2.5,-1.13641 2.5,-2.5v-19.08984c0,-2.29665 -1.05548,-4.46899 -2.85937,-5.89062l-14.21289,-11.19727c-0.27738,-0.21912 -0.62324,-0.33326 -0.97656,-0.32227zM24,7.41016l13.28516,10.4668c1.0841,0.85437 1.71484,2.15385 1.71484,3.5332v18.58984h-9v-9.5c0,-1.91495 -1.58505,-3.5 -3.5,-3.5h-5c-1.91495,0 -3.5,1.58505 -3.5,3.5v9.5h-9v-18.58984c0,-1.37935 0.63074,-2.67883 1.71484,-3.5332z">
+                                        </path>
+                                    </g>
+                                </g>
+                            </svg>
+                        </span>
+                        <span class="font-extrabold">Nirvana Tech Fest</span>
+                    </div>
+                </div>
+                <div>
+                    <p class="font-semibold">Other Pages</p>
+                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                        <li><a href="/events.html" class="hover:text-sky-600-400">Events</a></li>
+                        <li><a href="/about.html" class="hover:text-sky-600-400">About</a></li>
+                        <li><a href="/contact.html" class="hover:text-sky-600-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-semibold">Events</p>
+                    <ul class="mt-3 space-y-2 text-sm text-slate-600">
+                        <li><a href="" class="hover:text-sky-600-400">Webathon</a></li>
+                        <li><a href="" class="hover:text-sky-600-400">24X7 Hackathon</a></li>
+                        <li><a href="" class="hover:text-sky-600-400">Figma Fiesta</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-semibold">Follow</p>
+                    <div class="mt-3 flex gap-3">
+                        <a href="#" class="p-2 rounded-lg border border-slate-200 hover:bg-slate-50-800"
+                            aria-label="Twitter"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M22 5.8c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.2 1.7-2.1-.8.5-1.7.9-2.6 1.1C18 4.6 16.9 4 15.6 4c-2.5 0-4.3 2.3-3.7 4.7-3.6-.2-6.8-1.9-9-4.6-1 1.8-.5 4.1 1.2 5.2-.6 0-1.2-.2-1.7-.5 0 2 1.4 3.8 3.5 4.2-.6.2-1.2.2-1.9.1.5 1.6 2 2.7 3.8 2.7-1.7 1.3-3.9 2-6.2 1.7 1.9 1.2 4.1 1.9 6.5 1.9 7.8 0 12.3-6.7 12-12.7.8-.6 1.5-1.3 2-2.1z" />
+                            </svg></a>
+                        <a href="#" class="p-2 rounded-lg border border-slate-200 hover:bg-slate-50-800"
+                            aria-label="GitHub"><svg class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                                <path
+                                    d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7-1 .7-1 .8-1.4 2.2-1 2.7-.8.1-.8.4-1.4.7-1.7-2.7-.3-5.6-1.4-5.6-6.2 0-1.4.5-2.5 1.2-3.4-.1-.3-.5-1.7.1-3.5 0 0 1-.3 3.5 1.2a11.8 11.8 0 016.3 0C17 4.6 18 4.9 18 4.9c.6 1.8.2 3.2.1 3.5.8.9 1.3 2 1.3 3.4 0 4.8-2.9 5.9-5.6 6.2.5.4.9 1.2.9 2.4v3.6c0 .3.2.7.8.6A12 12 0 0012 .5z" />
+                            </svg></a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500 lg:pr-60">
+                <p>© <span id="year"></span> Nirvana. All rights reserved.</p>
+                <div class="flex items-center gap-2">
+                    <a href="#" class="hover:text-sky-600-400">Privacy</a>
+                    <span aria-hidden="true">•</span>
+                    <a href="#" class="hover:text-sky-600-400">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 </body>
+<script src="js/script.js"></script>
+
 </html>
