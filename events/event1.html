@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nirvana Tech Fest: Enjoy The Event">
+  <meta name="keywords" content="web development, hackathon, landing page, Tailwind CSS, responsive design">
+  <title>Nirvana Tech Fest | TeekGeeks</title>
+  <link href="https://fonts.googleapis.com/css2?family=Anta&family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="shortcut icon" href="/images/favicon-white-32.png" type="image/x-icon">
+  <script>
+    // Tailwind config: fonts, colors, container, etc.
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          container: { center: true, padding: '1rem' },
+          colors: {
+            brand: {
+              50: '#ecfeff',
+              100: '#cffafe',
+              200: '#a5f3fc',
+              300: '#67e8f9',
+              400: '#22d3ee',
+              500: '#06b6d4',
+              600: '#0891b2',
+              700: '#0e7490',
+              800: '#155e75',
+              900: '#164e63'
+            }
+          },
+          boxShadow: {
+            soft: '0 10px 30px rgba(0,0,0,0.08)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --ease: cubic-bezier(.2, .8, .2, 1);
+    }
+
+    html {
+      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+    }
+
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(18px) scale(.98);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+
+<body class="bg-gradient-to-br from-purple-100 to-purple-200 text-gray-800">
+
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/90 border-b border-slate-200/60">
+    <div class="container">
+      <div class="flex items-center justify-between py-3">
+        <a href="/" class="flex items-center gap-2 group">
+          <span
+            class="inline-flex h-9 w-9 rounded-2xl bg-purple-800 items-center justify-center text-white shadow-soft ring-1 ring-white/20">
+            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
+              <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                style="mix-blend-mode: normal">
+                <g transform="scale(5.33333,5.33333)">
+                  <path
+                    d="M23.95117,4c-0.31984,0.01092 -0.62781,0.12384 -0.87891,0.32227l-14.21289,11.19727c-1.8039,1.42163 -2.85937,3.59398 -2.85937,5.89063v19.08984c0,1.36359 1.13641,2.5 2.5,2.5h10c1.36359,0 2.5,-1.13641 2.5,-2.5v-10c0,-0.29504 0.20496,-0.5 0.5,-0.5h5c0.29504,0 0.5,0.20496 0.5,0.5v10c0,1.36359 1.13641,2.5 2.5,2.5h10c1.36359,0 2.5,-1.13641 2.5,-2.5v-19.08984c0,-2.29665 -1.05548,-4.46899 -2.85937,-5.89062l-14.21289,-11.19727c-0.27738,-0.21912 -0.62324,-0.33326 -0.97656,-0.32227zM24,7.41016l13.28516,10.4668c1.0841,0.85437 1.71484,2.15385 1.71484,3.5332v18.58984h-9v-9.5c0,-1.91495 -1.58505,-3.5 -3.5,-3.5h-5c-1.91495,0 -3.5,1.58505 -3.5,3.5v9.5h-9v-18.58984c0,-1.37935 0.63074,-2.67883 1.71484,-3.5332z">
+                  </path>
+                </g>
+              </g>
+            </svg>
+          </span>
+          <span class="text-lg font-extrabold tracking-tight font-anta">Nirvana Tech Fest</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-6 font-semibold">
+          <a href="/index.html" class="hover:text-sky-600-400">Home</a>
+          <a href="#events" class="hover:text-sky-600-400">Events</a>
+          <a href="/about.html" class="hover:text-sky-600-400">About</a>
+          <a href="/contact.html" class="hover:text-sky-600-400">Contact</a>
+        </nav>
+
+        <div class="flex items-center gap-2">
+
+          <a href="#upcomingevents"
+            class="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-purple-800 hover:bg-purpose-700 text-white text-sm font-semibold shadow-soft transition">
+            Get Started
+          </a>
+          <button id="menuBtn" class="md:hidden p-2 rounded-xl ring-1 ring-transparent bg-none transition"
+            aria-label="Open menu">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="md:hidden hidden pb-4">
+        <nav class="grid gap-2">
+          <a href="/" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">Home</a>
+          <a href="#events" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">Events</a>
+          <a href="/about.html" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">About</a>
+          <a href="/contact.html" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">Contact</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+    <div class="text-center">
+      <h1 class="text-4xl font-bold mb-2 text-purple-800">WEB-A-THON 3.0</h1>
+      <p class="text-gray-600 mb-6">Category: School Level Competition</p>
+      <img src="/images/banner1.png" alt="Event Banner" class="mx-auto rounded-lg max-w-full h-auto mb-6">
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow-md space-y-4">
+      <p>
+        💻 Are you ready to code your way to glory?<br><br>
+        🗓 <strong>20th August</strong> — The Tech Geeks Club presents the ultimate showdown of creativity, innovation,
+        and web wizardry — <strong>WEB-A-THON 3.0!</strong><br><br>
+        ✨ Build, design, and host your own responsive website in our Frontend Development Competition.<br><br>
+        ⚡ Limited spots available — Join solo or team up and let's code the future!
+      </p>
+    </div>
+
+    <!-- Schedule -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold mb-4 underline">📍 Schedule & Venue</h2>
+      <ul class="space-y-2">
+        <li><strong>Date:</strong> 26th August 2025</li>
+        <li><strong>Time:</strong> 10:00 AM – 5:00 PM</li>
+        <li><strong>Venue:</strong> MPH 1</li>
+      </ul>
+    </section>
+
+    <!-- Rules -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold mb-4 underline">📌 Rules & Eligibility</h2>
+      <ol class="list-decimal list-inside space-y-2">
+        <li>Open to School & College students (Solo or teams of 2–4).</li>
+        <li>Build a responsive website within the given time.</li>
+        <li>Bring your own laptops. Internet and power backup will be provided.</li>
+      </ol>
+    </section>
+
+    <!-- Form -->
+    <section class="mt-10">
+      <h2 class="text-2xl font-semibold mb-4">📝 Participation Form</h2>
+      <form class="space-y-4 bg-white p-6 rounded-xl shadow-md" action="#" method="post">
+        <div>
+          <label for="name" class="block font-medium">Team/Participant Name</label>
+          <input id="name" name="name" type="text" required class="w-full p-2 border border-gray-300 rounded" />
+        </div>
+        <div>
+          <label for="email" class="block font-medium">Email</label>
+          <input id="email" name="email" type="email" required class="w-full p-2 border border-gray-300 rounded" />
+        </div>
+        <div>
+          <label for="phone" class="block font-medium">Phone</label>
+          <input id="phone" name="phone" type="tel" required class="w-full p-2 border border-gray-300 rounded" />
+        </div>
+        <div>
+          <label for="category" class="block font-medium">Category</label>
+          <select id="category" name="category" required class="w-full p-2 border border-gray-300 rounded">
+            <option value="">Select…</option>
+            <option>School</option>
+            <option>College</option>
+            <option>Outdoor</option>
+          </select>
+        </div>
+        <div>
+          <label for="notes" class="block font-medium">Notes (optional)</label>
+          <textarea id="notes

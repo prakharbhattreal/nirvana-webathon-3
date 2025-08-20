@@ -4,13 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nirvana Tech Fest: Enjoy The Event">
+    <meta name="description" content="Nirvana Tech Fest: ">
     <meta name="keywords" content="web development, hackathon, landing page, Tailwind CSS, responsive design">
-    <title>Nirvana Tech Fest | TeekGeeks</title>
+    <title>Nirvana Tech Fest | About Us</title>
     <link href="https://fonts.googleapis.com/css2?family=Anta&family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="shortcut icon" href="/images/favicon-white-32.png" type="image/x-icon">
     <script>
         // Tailwind config: fonts, colors, container, etc.
         tailwind.config = {
@@ -40,37 +39,48 @@
         }
     </script>
     <style>
-        :root {
-            --ease: cubic-bezier(.2, .8, .2, 1);
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #121213e2;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
-        html {
-            font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
+        .about-header {
+            text-align: center;
+            padding: 3rem 2rem;
         }
 
-        .reveal-on-scroll {
-            opacity: 0;
-            transform: translateY(18px) scale(.98);
-            transition: opacity .7s var(--ease), transform .7s var(--ease);
+        .about-header h1 {
+            margin-bottom: 0.5rem;
+            color: rgb(183, 8, 203);
         }
 
-        .reveal-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0) scale(1);
+        .about-mission {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: rgb(248, 247, 247);
+            margin: 2rem auto;
+            max-width: 800px;
+            border-radius: 10px;
         }
 
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
-        }
-
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
+        .footer {
+            background: #fcfbfb;
+            color: rgb(8, 8, 8);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 
-<body class="font-sans antialiased">
+<body>
     <header class="sticky top-0 z-50 backdrop-blur bg-white/90 border-b border-slate-200/60">
         <div class="container">
             <div class="flex items-center justify-between py-3">
@@ -95,7 +105,7 @@
                 </a>
                 <nav class="hidden md:flex items-center gap-6 font-semibold">
                     <a href="/index.html" class="hover:text-sky-600-400">Home</a>
-                    <a href="#events" class="hover:text-sky-600-400">Events</a>
+                    <a href="/events.html" class="hover:text-sky-600-400">Events</a>
                     <a href="/about.html" class="hover:text-sky-600-400">About</a>
                     <a href="/contact.html" class="hover:text-sky-600-400">Contact</a>
                 </nav>
@@ -119,103 +129,26 @@
             <div id="mobileMenu" class="md:hidden hidden pb-4">
                 <nav class="grid gap-2">
                     <a href="/" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">Home</a>
-                    <a href="#events" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">Events</a>
+                    <a href="/event.html" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">Events</a>
                     <a href="/about.html" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">About</a>
                     <a href="/contact.html" class="px-3 py-2 rounded-lg hover:bg-slate-100-800">Contact</a>
                 </nav>
             </div>
         </div>
     </header>
-    <main>
-        <section id="home"
-            class="min-h-screen flex items-center justify-center text-white relative overflow-hidden pt-20 bg-gradient-to-r from-blue-900 from-10% to-purple-900 to-90%">
-            <div class="container mx-auto px-4 text-center z-10">
-                <h1 class="text-3xl lg:text-6xl sm:text-4xl font-bold md:mb-6 mb-2 animate-slide-up">Nirvana Tech Fest 2.0</h1>
-                <p class="text-md 2xl:text-xl md:mb-8 mb-4 animate-slide-up delay-200 max-w-3xl mx-auto">Take part in
-                    event show your talent and skill, win exciting prices.</p>
-                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                    <a href="#upcomingevents"
-                        class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-full font-semibold transition-all">Get
-                        Started</a>
-                </div>
-            </div>
-            <div class="absolute inset-0 z-0 opacity-50">
-                <div class="absolute top-10 left-10 w-16 sm:w-32 h-16 sm:h-32 bg-white rounded-full animate-pulse-slow">
-                </div>
-                <div
-                    class="absolute bottom-10 right-10 w-24 sm:w-48 h-24 sm:h-48 bg-white rounded-full animate-pulse-slow delay-1000">
-                </div>
-                <div
-                    class="absolute top-1/2 left-1/2 w-32 sm:w-64 h-32 sm:h-64 bg-white rounded-full animate-spin-slow opacity-20">
-                </div>
-            </div>
-        </section>
+    <h1 class="text-3xl font-bold text-purple-800 text-center py-10">About Us</h1>
 
-        <section class="py-8" id="events">
-            <div class="container">
-                <div class="max-w-2xl mx-auto text-center mb-12 reveal-on-scroll">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold">Events Sections</h2>
-                    <a href="/events.html" class="mt-4 text-slate-800">click for more events.</a>
-                </div>
-
-                <div class="container mx-auto px-4">
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-                        <div
-                            class="bg-white rounded-lg shadow-lg overflow-hidden animate-slide-up transition reveal-on-scroll">
-                            <img src="/images/banner1.png" alt="banner 1"
-                                class="rounded-sm shadow-soft border border-slate-200" />
-                            <div class="p-6 text-center">
-                                <a href="/events/event1.html" class="text-2xl font-bold mb-2">Webathon</a>
-                                <p class="text-neutral mb-4">2025-08-17</p>
-                                <p class="text-sm">School Level Competition</p>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-white rounded-lg shadow-lg overflow-hidden animate-slide-up transition reveal-on-scroll">
-                            <img src="/images/banner2.webp" alt="banner 1"
-                                class="rounded-sm shadow-soft border border-slate-200" />
-                            <div class="p-6 text-center">
-                                <a href="/events/event1.html" class="text-2xl font-bold mb-2">24X7 Hackathon</a>
-                                <p class="text-neutral mb-4">2025-08-17</p>
-                                <p class="text-sm">College Level Event</p>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-white rounded-lg shadow-lg overflow-hidden animate-slide-up transition reveal-on-scroll">
-                            <img src="/images/banner3.png" alt="banner 1"
-                                class="rounded-sm shadow-soft border border-slate-200" />
-                            <div class="p-6 text-center">
-                                <a href="/events/event1.html" class="text-2xl font-bold mb-2">Gaming Events</a>
-                                <p class="text-neutral mb-4">2025-08-18</p>
-                                <p class="text-sm">Outdoor Event</p>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-white rounded-lg shadow-lg overflow-hidden animate-slide-up transition reveal-on-scroll">
-                            <img src="/images/banner5.jpg" alt="banner 1"
-                                class="rounded-sm shadow-soft border border-slate-200" />
-                            <div class="p-6 text-center">
-                                <a href="/events/event1.html" class="text-2xl font-bold mb-2">Science Exihibition</a>
-                                <p class="text-neutral mb-4">2025-08-18</p>
-                                <p class="text-sm">School Level Event</p>
-                            </div>
-                        </div>
-                        <div
-                            class="bg-white rounded-lg shadow-lg overflow-hidden animate-slide-up transition reveal-on-scroll">
-                            <img src="/images/banner2.png" alt="banner 1"
-                                class="rounded-sm shadow-soft border border-slate-200" />
-                            <div class="p-6 text-center">
-                                <a href="/events/event1.html" class="text-2xl font-bold mb-2">Figma Fiesta</a>
-                                <p class="text-neutral mb-4">2025-08-18</p>
-                                <p class="text-sm">College Level Event</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
+    <section class="about-mission">
+        <p>
+            Tech Geeks Club, in collaboration with the School of Computing, is organizing Nirvana Tech
+            Fest 2025 on October 17 and 18. This two-day event will bring together students from
+            various schools and colleges to celebrate technology, creativity, and innovation. The fest will
+            feature a wide range of activities including hackathons, workshops, seminars, science
+            exhibitions, coding competitions, and certification examinations. In addition to the technical
+            events, departmental stalls will showcase innovative projects and ideas, while the evenings
+            will be highlighted with a vibrant DJ night to foster networking and celebration.
+        </p>
+    </section>
     <footer class="border-t border-slate-300">
         <div class="container pt-10 pb-2">
             <div class="grid md:grid-cols-4 gap-6">
@@ -283,8 +216,6 @@
             </div>
         </div>
     </footer>
-
 </body>
 <script src="js/script.js"></script>
-
 </html>
