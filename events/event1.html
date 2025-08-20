@@ -2,77 +2,35 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Nirvana Tech Fest: Enjoy The Event">
-  <meta name="keywords" content="web development, hackathon, landing page, Tailwind CSS, responsive design">
-  <title>Nirvana Tech Fest | TeekGeeks</title>
-  <link href="https://fonts.googleapis.com/css2?family=Anta&family=Bebas+Neue&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Nirvana Tech Fest: Web-A-Thon 3.0" />
+  <meta name="keywords" content="web development, hackathon, landing page, Tailwind CSS, responsive design" />
+  <title>Nirvana Tech Fest | TechGeeks</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="shortcut icon" href="/images/favicon-white-32.png" type="image/x-icon">
   <script>
-    // Tailwind config: fonts, colors, container, etc.
     tailwind.config = {
-      darkMode: 'class',
       theme: {
         extend: {
-          container: { center: true, padding: '1rem' },
+          fontFamily: {
+            anta: ['Anta', 'sans-serif'],
+            bebas: ['Bebas Neue', 'cursive']
+          },
           colors: {
             brand: {
-              50: '#ecfeff',
-              100: '#cffafe',
-              200: '#a5f3fc',
-              300: '#67e8f9',
-              400: '#22d3ee',
-              500: '#06b6d4',
-              600: '#0891b2',
-              700: '#0e7490',
-              800: '#155e75',
-              900: '#164e63'
+              500: '#7c3aed',
+              600: '#6d28d9',
+              700: '#5b21b6'
             }
-          },
-          boxShadow: {
-            soft: '0 10px 30px rgba(0,0,0,0.08)'
           }
         }
       }
-    }
+    };
   </script>
-  <style>
-    :root {
-      --ease: cubic-bezier(.2, .8, .2, 1);
-    }
-
-    html {
-      font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji';
-    }
-
-    .reveal-on-scroll {
-      opacity: 0;
-      transform: translateY(18px) scale(.98);
-      transition: opacity .7s var(--ease), transform .7s var(--ease);
-    }
-
-    .reveal-on-scroll.is-visible {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
-
-    .no-scrollbar {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-  </style>
 </head>
 
-<body class="bg-gradient-to-br from-purple-100 to-purple-200 text-gray-800">
-
-  <header class="sticky top-0 z-50 backdrop-blur bg-white/90 border-b border-slate-200/60">
+<body class="bg-white text-gray-800 min-h-screen font-sans">
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/90 border-b border-slate-200/60 px-5">
     <div class="container">
       <div class="flex items-center justify-between py-3">
         <a href="/" class="flex items-center gap-2 group">
@@ -127,68 +85,138 @@
     </div>
   </header>
 
-  <main class="max-w-5xl mx-auto px-4 py-10">
-    <div class="text-center">
-      <h1 class="text-4xl font-bold mb-2 text-purple-800">WEB-A-THON 3.0</h1>
-      <p class="text-gray-600 mb-6">Category: School Level Competition</p>
-      <img src="/images/banner1.png" alt="Event Banner" class="mx-auto rounded-lg max-w-full h-auto mb-6">
+  <section class="text-center py-12 px-6">
+    <h1
+      class="text-4xl md:text-6xl font-extrabold text-black ">
+      WEB-A-THON 3.0
+    </h1>
+    <p class="text-lg md:text-xl text-gray-600 mt-4 max-w-2xl mx-auto">
+      are you ready to code your way to glory? Join us for the ultimate showdown of creativity, innovation, and web
+      wizardry!
+    </p>
+    <img src="/images/banner1.png" alt="Web-A-Thon Banner"
+      class="mx-auto rounded-2xl shadow-lg mt-8 w-80 md:w-[500px]" />
+  </section>
+
+  <!-- DETAILS -->
+  <section class="max-w-4xl mx-auto px-6 py-8 bg-white rounded-2xl shadow-lg">
+    <h2 class="text-2xl font-semibold mb-4 text-brand-600">Event Details</h2>
+    <p class="leading-relaxed text-gray-700">
+      Showcase your creativity in our <strong>Frontend Development Competition</strong> — build, design, and host your
+      own responsive website. Gather your team or come solo and make the web better — one line of code at a time!
+    </p>
+    <ul class="mt-6 space-y-2 text-gray-700">
+      <li><strong>Date:</strong> 26th August 2025</li>
+      <li><strong>Time:</strong> 10:00 AM – 05:00 PM</li>
+      <li><strong>Venue:</strong> MPH 1</li>
+    </ul>
+  </section>
+
+  <section class="max-w-4xl mx-auto px-6 py-8">
+    <h2 class="text-2xl font-semibold text-brand-600 underline">Rules & Eligibility</h2>
+    <ol class="list-decimal ml-5 mt-4 text-gray-700 space-y-2">
+      <li>Open to school students teams of up to 4 members.</li>
+      <li>Participants must bring their own laptops.</li>
+      <li>Internet access will be provided at the venue.</li>
+      <li>Projects must be submitted before the deadline.</li>
+    </ol>
+  </section>
+
+  <section id="form" class="max-w-4xl mx-auto px-6 py-8 bg-white rounded-2xl">
+    <h2 class="text-2xl font-bold text-brand-600 mb-6">Participation Form</h2>
+    <form action="#" method="POST" class="space-y-4">
+      <div>
+        <label for="name" class="block mb-1 font-medium">Team/Participant Name</label>
+        <input id="name" name="name" type="text" required
+          class="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-500 outline-none " />
+      </div>
+      <div>
+        <label for="email" class="block mb-1 font-medium">Email</label>
+        <input id="email" name="email" type="email" required
+          class="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-500 outline-none " />
+      </div>
+      <div>
+        <label for="phone" class="block mb-1 font-medium">Phone</label>
+        <input id="phone" name="phone" type="tel" required
+          class="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-500 outline-none " />
+      </div>
+      <div>
+        <label for="notes" class="block mb-1 font-medium">Notes (optional)</label>
+        <textarea id="notes" name="notes" rows="4" placeholder="Any special requirements…"
+          class="w-full px-4 py-2 rounded-lg bg-white border border-gray-300 focus:border-brand-500 focus:ring-2 focus:ring-brand-500 outline-none"></textarea>
+      </div>
+      <button type="submit"
+        class="w-full bg-brand-600 hover:bg-brand-700 transition text-white font-semibold py-3 rounded-lg">
+        Submit
+      </button>
+    </form>
+  </section>
+
+  <footer class="border-t border-slate-300 my-10 px-5">
+    <div class="container pt-10 pb-2">
+      <div class="grid md:grid-cols-4 gap-6">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="inline-flex h-8 w-8 rounded-xl bg-purple-800 items-center justify-center text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="20" height="20" viewBox="0,0,256,256">
+                <g fill="#ffffff" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
+                  stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0"
+                  font-family="none" font-weight="none" font-size="none" text-anchor="none"
+                  style="mix-blend-mode: normal">
+                  <g transform="scale(5.33333,5.33333)">
+                    <path
+                      d="M23.95117,4c-0.31984,0.01092 -0.62781,0.12384 -0.87891,0.32227l-14.21289,11.19727c-1.8039,1.42163 -2.85937,3.59398 -2.85937,5.89063v19.08984c0,1.36359 1.13641,2.5 2.5,2.5h10c1.36359,0 2.5,-1.13641 2.5,-2.5v-10c0,-0.29504 0.20496,-0.5 0.5,-0.5h5c0.29504,0 0.5,0.20496 0.5,0.5v10c0,1.36359 1.13641,2.5 2.5,2.5h10c1.36359,0 2.5,-1.13641 2.5,-2.5v-19.08984c0,-2.29665 -1.05548,-4.46899 -2.85937,-5.89062l-14.21289,-11.19727c-0.27738,-0.21912 -0.62324,-0.33326 -0.97656,-0.32227zM24,7.41016l13.28516,10.4668c1.0841,0.85437 1.71484,2.15385 1.71484,3.5332v18.58984h-9v-9.5c0,-1.91495 -1.58505,-3.5 -3.5,-3.5h-5c-1.91495,0 -3.5,1.58505 -3.5,3.5v9.5h-9v-18.58984c0,-1.37935 0.63074,-2.67883 1.71484,-3.5332z">
+                    </path>
+                  </g>
+                </g>
+              </svg>
+            </span>
+            <span class="font-extrabold">Nirvana Tech Fest</span>
+          </div>
+        </div>
+        <div>
+          <p class="font-semibold">Other Pages</p>
+          <ul class="mt-3 space-y-2 text-sm text-slate-600">
+            <li><a href="/events.html" class="hover:text-sky-600-400">Events</a></li>
+            <li><a href="/about.html" class="hover:text-sky-600-400">About</a></li>
+            <li><a href="/contact.html" class="hover:text-sky-600-400">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold">Events</p>
+          <ul class="mt-3 space-y-2 text-sm text-slate-800">
+            <li><a href="" class="hover:text-sky-600">Webathon</a></li>
+            <li><a href="" class="hover:text-sky-600">24X7 Hackathon</a></li>
+            <li><a href="" class="hover:text-sky-600">Figma Fiesta</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold">Follow</p>
+          <div class="mt-3 flex gap-3">
+            <a href="#" class="p-2 rounded-lg border border-slate-200 hover:bg-slate-50-800" aria-label="Twitter"><svg
+                class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M22 5.8c-.7.3-1.5.6-2.3.7.8-.5 1.4-1.2 1.7-2.1-.8.5-1.7.9-2.6 1.1C18 4.6 16.9 4 15.6 4c-2.5 0-4.3 2.3-3.7 4.7-3.6-.2-6.8-1.9-9-4.6-1 1.8-.5 4.1 1.2 5.2-.6 0-1.2-.2-1.7-.5 0 2 1.4 3.8 3.5 4.2-.6.2-1.2.2-1.9.1.5 1.6 2 2.7 3.8 2.7-1.7 1.3-3.9 2-6.2 1.7 1.9 1.2 4.1 1.9 6.5 1.9 7.8 0 12.3-6.7 12-12.7.8-.6 1.5-1.3 2-2.1z" />
+              </svg></a>
+            <a href="#" class="p-2 rounded-lg border border-slate-200 hover:bg-slate-50-800" aria-label="GitHub"><svg
+                class="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 .5a12 12 0 00-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.5-1.2-1.2-1.6-1.2-1.6-1-.7.1-.7.1-.7 1.1.1 1.7 1.1 1.7 1.1 1 .1.7-1 .7-1 .8-1.4 2.2-1 2.7-.8.1-.8.4-1.4.7-1.7-2.7-.3-5.6-1.4-5.6-6.2 0-1.4.5-2.5 1.2-3.4-.1-.3-.5-1.7.1-3.5 0 0 1-.3 3.5 1.2a11.8 11.8 0 016.3 0C17 4.6 18 4.9 18 4.9c.6 1.8.2 3.2.1 3.5.8.9 1.3 2 1.3 3.4 0 4.8-2.9 5.9-5.6 6.2.5.4.9 1.2.9 2.4v3.6c0 .3.2.7.8.6A12 12 0 0012 .5z" />
+              </svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="mt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-sm text-slate-500 lg:pr-60">
+        <p>© <span id="year"></span> Nirvana. All rights reserved.</p>
+        <div class="flex items-center gap-2">
+          <a href="#" class="hover:text-sky-600">Privacy</a>
+          <span aria-hidden="true">•</span>
+          <a href="#" class="hover:text-sky-600">Terms</a>
+        </div>
+      </div>
     </div>
+  </footer>
+</body>
+<script src="js/script.js"></script>
 
-    <div class="bg-white p-6 rounded-xl shadow-md space-y-4">
-      <p>
-        💻 Are you ready to code your way to glory?<br><br>
-        🗓 <strong>20th August</strong> — The Tech Geeks Club presents the ultimate showdown of creativity, innovation,
-        and web wizardry — <strong>WEB-A-THON 3.0!</strong><br><br>
-        ✨ Build, design, and host your own responsive website in our Frontend Development Competition.<br><br>
-        ⚡ Limited spots available — Join solo or team up and let's code the future!
-      </p>
-    </div>
-
-    <!-- Schedule -->
-    <section class="mt-10">
-      <h2 class="text-2xl font-semibold mb-4 underline">📍 Schedule & Venue</h2>
-      <ul class="space-y-2">
-        <li><strong>Date:</strong> 26th August 2025</li>
-        <li><strong>Time:</strong> 10:00 AM – 5:00 PM</li>
-        <li><strong>Venue:</strong> MPH 1</li>
-      </ul>
-    </section>
-
-    <!-- Rules -->
-    <section class="mt-10">
-      <h2 class="text-2xl font-semibold mb-4 underline">📌 Rules & Eligibility</h2>
-      <ol class="list-decimal list-inside space-y-2">
-        <li>Open to School & College students (Solo or teams of 2–4).</li>
-        <li>Build a responsive website within the given time.</li>
-        <li>Bring your own laptops. Internet and power backup will be provided.</li>
-      </ol>
-    </section>
-
-    <!-- Form -->
-    <section class="mt-10">
-      <h2 class="text-2xl font-semibold mb-4">📝 Participation Form</h2>
-      <form class="space-y-4 bg-white p-6 rounded-xl shadow-md" action="#" method="post">
-        <div>
-          <label for="name" class="block font-medium">Team/Participant Name</label>
-          <input id="name" name="name" type="text" required class="w-full p-2 border border-gray-300 rounded" />
-        </div>
-        <div>
-          <label for="email" class="block font-medium">Email</label>
-          <input id="email" name="email" type="email" required class="w-full p-2 border border-gray-300 rounded" />
-        </div>
-        <div>
-          <label for="phone" class="block font-medium">Phone</label>
-          <input id="phone" name="phone" type="tel" required class="w-full p-2 border border-gray-300 rounded" />
-        </div>
-        <div>
-          <label for="category" class="block font-medium">Category</label>
-          <select id="category" name="category" required class="w-full p-2 border border-gray-300 rounded">
-            <option value="">Select…</option>
-            <option>School</option>
-            <option>College</option>
-            <option>Outdoor</option>
-          </select>
-        </div>
-        <div>
-          <label for="notes" class="block font-medium">Notes (optional)</label>
-          <textarea id="notes
+</html>
